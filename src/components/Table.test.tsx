@@ -32,7 +32,7 @@ test('starts to fail if above 3 lines are commented', async () => {
   fireEvent.click(columnButton);
   const selectionButton = await screen.findByRole('menuitemcheckbox', { name: columnStructures[0].header });
   fireEvent.click(selectionButton);
-  fireEvent.keyDown(document, { key: 'Tab', code: 'Tab' });
+  fireEvent.keyDown(selectionButton, { key: 'Escape', code: 'Escape' });
 
   const rowElements2 = screen.getAllByRole('row');
   columnheaders = within(rowElements2[0]).getAllByRole('columnheader');
